@@ -68,7 +68,11 @@ const isHolder = async () => {
                 }
 
             }
-            else window.location.assign('/not-holder')
+            else {
+                delete axios.defaults.headers.common.authentication
+                localStorage.removeItem('ACCESS_TOKEN')
+                window.location.assign('/not-holder')
+            }
         }
     }
     catch (err) {
