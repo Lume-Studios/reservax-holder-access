@@ -55,7 +55,6 @@ const isHolder = async () => {
 
             if (balanceTotal) {
                 const message = process.env.AUTHENTICATION;
-                console.log('caiu aqui')
                 const signature = await ethereum.request({ method: 'personal_sign', params: [message, accounts[0]] });
                 const response = await axios.post(process.env.SERVER + 'auth/login', {
                     address: accounts[0],
