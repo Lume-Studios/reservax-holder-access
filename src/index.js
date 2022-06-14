@@ -54,7 +54,7 @@ const isHolder = async () => {
 
 
             if (balanceTotal) {
-                const message = "Olá Pistol Holder! Estamos verificando sua wallet para liberar o acesso exclusivo a área do holder";
+                const message = "Olá Pistol Holder! Estamos verificando sua wallet para liberar o acesso!";
                 const signature = await ethereum.request({ method: 'personal_sign', params: [message, accounts[0]] });
                 const response = await axios.post(process.env.SERVER + 'auth/login', {
                     address: accounts[0],
