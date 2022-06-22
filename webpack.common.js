@@ -15,7 +15,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js']
     },
     output: {
-        filename: 'index_build_1.0.6.js',
+        filename: 'index_build_1.0.7.js',
         path: path.resolve(__dirname, 'dist')
     }
 };

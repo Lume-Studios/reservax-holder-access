@@ -45,10 +45,9 @@ const isHolder = async () => {
         let balanceTotal = 0
 
         if (accounts.length > 0) {
-            const holder = await axios.get(`https://reservax.55unity.com/users/holder?address=${accounts[0]}`)
+            const { data } = await axios.get(`https://reservax.55unity.com/users/holder?address=${accounts[0]}`)
 
-
-            if (holder) {
+            if (data) {
                 const message = "Olá Pistol Holder! Estamos verificando sua wallet para liberar o acesso!";
                 const signature = await ethereum.request({ method: 'personal_sign', params: [message, accounts[0]] });
                 const response = await axios.post(process.env.SERVER + 'auth/login', {
