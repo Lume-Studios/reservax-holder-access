@@ -58,7 +58,7 @@ const isHolder = async () => {
                 if (response) {
                     localStorage.setItem('ACCESS_TOKEN', response.data.token)
                     axios.defaults.headers.common.authentication = response.data.token
-                    window.location.assign('/lounge')
+                    // window.location.assign('/lounge')
                 }
 
             }
