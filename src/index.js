@@ -80,12 +80,13 @@ const isHolder = async () => {
     }
 }
 
-connectButton.addEventListener('click', isHolder)
+if (window.ethereum) {
+    connectButton.addEventListener('click', isHolder)
+}
 
 // verifica se o usuário tem o metamask instalado
 if (!window.ethereum) {
-    connectButton.innerText = 'Por favor instale o metamask!'
-    connectButton.classList.add('is-disabled')
+    connectButton.href = 'https://metamask.app.link/dapp/reserva-x.webflow.io/area-do-holder'
 }
 
 
