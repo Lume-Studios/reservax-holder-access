@@ -86,7 +86,14 @@ if (window.ethereum) {
 
 // verifica se o usuário tem o metamask instalado
 if (!window.ethereum) {
-    connectButton.href = 'https://metamask.app.link/dapp/reserva-x.webflow.io/area-do-holder'
+    if (window.matchMedia("(max-width: 767px)").matches) {
+        console.log("This is a mobile device.");
+        connectButton.href = 'https://metamask.app.link/dapp/reserva-x.webflow.io/area-do-holder'
+    } else {
+        connectButton.innerText = 'Por favor instale o metamask!'
+        connectButton.href = 'https://metamask.io/download/'
+        connectButton.classList.add('is-disabled')
+    }
 }
 
 
